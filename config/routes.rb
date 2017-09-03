@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   
   root 'demo#index'
   
+  resources :subjects do [:new]
+    member do
+      get :delete
+    end
+  end
   
   get 'portfolio/index'
 
