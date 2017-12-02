@@ -1,0 +1,38 @@
+<% @page_title = "All Sections" %>
+
+<%= link_to("<< Back to Page", pages_path(:subject_id => @page.subject_id), :class => 'back-link') %>
+
+<h1>Sections#index</h1>
+
+<div class="Sections index">
+    <h2>Sections</h2>
+    
+    <%= link_to("Add New Sections", new_section_path(:page_id => @page.id), :class => 'action new') %>
+    
+    <table class="listing" summary="Sections list">
+        <tr class="header">
+            <th>#</th>
+            <th>Page_id</th>
+            <th>Name</th>
+            <th>Visible</th>
+            <th>Actions</th>
+        </tr>
+        <% @sections.each do |section| %>
+        <tr class="cells">
+            <td><%= section.position %></td>
+            <td><%= section.page_id %></td>
+            <td><%= section.name %></td>
+            <td class="center"><%= status_tag(section.visible) %></td>
+            <td class="actions">
+                <%= link_to("Show", section_path(section, :page_id => @page.id), :class => 'action show') %>
+                <%= link_to("Edit", edit_section_path(section, :page_id => @page.id), :class => 'action edit') %>
+                <%= link_to("Delete", delete_section_path(section, :page_id => @page.id), :class => 'action delete') %>
+            </td>
+        </tr>
+        <% end %>
+    </table>
+</div>
+<br/>
+<br/>
+<br/>
+<h1>Sections#index</h1>

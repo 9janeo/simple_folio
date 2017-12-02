@@ -1,0 +1,16 @@
+<% @page_title = "New Section" %>
+
+<%= link_to("<< Back to List", sections_path(:page_id => @page.id), :class => 'back-link') %>
+
+    <div class="New Section">
+        <h2>New Section</h2>
+        
+        <%= form_for @section, :url => section_path(@page, :page => @page.id) do |f| %>
+            
+            <%= render(:partial => 'form', :locals => {:f => f}) %>
+            
+            <div class="form-buttons">
+                <%= f.submit("Save Sections") %>
+            </div>
+        <% end %>
+    </div>

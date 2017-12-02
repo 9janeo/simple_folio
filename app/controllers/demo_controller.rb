@@ -1,6 +1,6 @@
 class DemoController < ApplicationController
   
-  layout false
+  layout 'application'
   
   def index
     render('index')
@@ -19,6 +19,10 @@ class DemoController < ApplicationController
   
   def niyi
     redirect_to('http://www.niyiadewole.ca')
+  end
+  
+  def escape_output
+    
   end
   
 end
